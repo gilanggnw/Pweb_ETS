@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Forex API</title>
+</head>
+
+<body>
+    <a href="https://www.freeforexapi.com">
+        <img alt="Free Forex API" src="https://www.freeforexapi.com/Images/link.png" height="20">
+    </a>
+
+    <div id="forex-info">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        function fetchAndDisplayData() {
+            fetch('https://www.freeforexapi.com/api/live')
+                .then(response => response.json())
+                .then(data => {
+                    const forexData = data.rates;
+
+                    const infoDiv = document.getElementById('forex-info');
+                    infoDiv.innerHTML = ''; 
+
+                    let row = null;
+
+                    
+    </script>
+</body>
