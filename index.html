@@ -8,11 +8,11 @@
 </head>
 
 <body>
-    <a href="https://www.freeforexapi.com">
+    <!-- <a href="https://www.freeforexapi.com">
         <img alt="Free Forex API" src="https://www.freeforexapi.com/Images/link.png" height="20">
-    </a>
+    </a> -->
 
-    <div id="forex-info">
+    <div id="forex-info" class="container mt-4">
 
     </div>
 
@@ -20,7 +20,7 @@
 
     <script>
         function fetchAndDisplayData() {
-            fetch('https://www.freeforexapi.com/api/live')
+            fetch('http://10.199.13.243:81/currency.json')
                 .then(response => response.json())
                 .then(data => {
                     const forexData = data.rates;
@@ -35,6 +35,9 @@
                             row = document.createElement('div');
                             row.className = 'row';
                         }
+
+                        const column = document.createElement('div');
+                        column.className = 'col-sm';
 
                         const card = document.createElement('div');
                         card.className = 'card col-xl-3 col-md-6 mb-4'
@@ -64,11 +67,173 @@
                         cardIndex.className = 'h5 mb-0 mr-3 font-weight-bold text-gray-800';
 
                         cardCurrency.innerHTML = `
-                            <p>${entry.supportedPairs}</p>
+                            <p>EURUSD</p>
                         `;
+
+                        cardIndex.innerHTML = `
+                            <p>${entry.rate.EURUSD}</p>
+                        `;
+
+                        cardColumn1.appendChild(cardCurrency);
+
+                        cardGutter2.appendChild(cardIndex);
+
+                        cardColumn2.appendChild(cardGutter2);
+
+                        cardGutter1.appendChild(cardColumn1);
+
+                        cardGutter1.appendChild(cardColumn2);
+
+                        cardBody.appendChild(cardGutter1);
+
+                        cardBorder.appendChild(cardBody);
+
+                        card.appendChild(cardBorder);
+
+                        column.appendChild(card);
+
+                        if (row) {
+                            row.appendChild(column);
+                        }
+
+                        if (index % 4 === 3 || index === forexData.length - 1) {
+                            infoDiv.appendChild(row);
+                        }
+
+                        cardCurrency.innerHTML = `
+                            <p>EURGBP</p>
+                        `;
+
+                        cardIndex.innerHTML = `
+                            <p>${entry.rate.EURGBP}</p>
+                        `;
+
+                        cardColumn1.appendChild(cardCurrency);
+                        cardGutter2.appendChild(cardIndex);
+                        cardColumn2.appendChild(cardGutter2);
+                        cardGutter1.appendChild(cardColumn1);
+                        cardGutter1.appendChild(cardColumn2);
+                        cardBody.appendChild(cardGutter1);
+                        cardBorder.appendChild(cardBody);
+                        card.appendChild(cardBorder);
+                        column.appendChild(card);
+
+                        if (row) {
+                            row.appendChild(column);
+                        }
+
+                        if (index % 4 === 3 || index === forexData.length - 1) {
+                            infoDiv.appendChild(row);
+                        }
+
+                        cardCurrency.innerHTML = `
+                            <p>USDJPY</p>
+                        `;
+
+                        cardIndex.innerHTML = `
+                            <p>${entry.rate.USDJPY}</p>
+                        `;
+
+                        cardColumn1.appendChild(cardCurrency);
+
+                        cardGutter2.appendChild(cardIndex);
+
+                        cardColumn2.appendChild(cardGutter2);
+
+                        cardGutter1.appendChild(cardColumn1);
+
+                        cardGutter1.appendChild(cardColumn2);
+
+                        cardBody.appendChild(cardGutter1);
+
+                        cardBorder.appendChild(cardBody);
+
+                        card.appendChild(cardBorder);
+
+                        column.appendChild(card);
+
+                        if (row) {
+                            row.appendChild(column);
+                        }
+
+                        if (index % 4 === 3 || index === forexData.length - 1) {
+                            infoDiv.appendChild(row);
+                        }
+
+                        cardCurrency.innerHTML = `
+                            <p>USDCHF</p>
+                        `;
+
+                        cardIndex.innerHTML = `
+                            <p>${entry.rate.USDCHF}</p>
+                        `;
+
+                        cardColumn1.appendChild(cardCurrency);
+
+                        cardGutter2.appendChild(cardIndex);
+
+                        cardColumn2.appendChild(cardGutter2);
+
+                        cardGutter1.appendChild(cardColumn1);
+
+                        cardGutter1.appendChild(cardColumn2);
+
+                        cardBody.appendChild(cardGutter1);
+
+                        cardBorder.appendChild(cardBody);
+
+                        card.appendChild(cardBorder);
+
+                        column.appendChild(card);
+
+                        if (row) {
+                            row.appendChild(column);
+                        }
+
+                        if (index % 4 === 3 || index === forexData.length - 1) {
+                            infoDiv.appendChild(row);
+                        }
+
+                        cardCurrency.innerHTML = `
+                            <p>USDCAD</p>
+                        `;
+
+                        cardIndex.innerHTML = `
+                            <p>${entry.rate.USDCAD}</p>
+                        `;
+
+                        cardColumn1.appendChild(cardCurrency);
+
+                        cardGutter2.appendChild(cardIndex);
+
+                        cardColumn2.appendChild(cardGutter2);
+
+                        cardGutter1.appendChild(cardColumn1);
+
+                        cardGutter1.appendChild(cardColumn2);
+
+                        cardBody.appendChild(cardGutter1);
+
+                        cardBorder.appendChild(cardBody);
+
+                        card.appendChild(cardBorder);
+
+                        column.appendChild(card);
+
+                        if (row) {
+                            row.appendChild(column);
+                        }
+
+                        if (index % 4 === 3 || index === forexData.length - 1) {
+                            infoDiv.appendChild(row);
+                        }
                     }
 
                 })    
+            }
+
+            window.onload = function() {
+                fetchAndDisplayData();
             }
     </script>
 </body>
