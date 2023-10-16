@@ -20,7 +20,7 @@
 
     <script>
         function fetchAndDisplayData() {
-            fetch('http://10.199.13.243:81/currency.json')
+            fetch('http://apilayer.net/api/live?access_key=977c093d5eb9db665f5ca6d170b68853&pairs=EURUSD,EURGBP,GBPUSD,USDJPY,AUDUSD,USDCHF,NZDUSD,USDCAD,USDZAR')
                 .then(response => response.json())
                 .then(data => {
                     const forexData = data.rates;
@@ -31,7 +31,7 @@
                     let row = null;
 
                     forexData.forEach((entry, index)) => {
-                        if (index % 4 == 0) {
+                        if (index % 4 == 0) {5
                             row = document.createElement('div');
                             row.className = 'row';
                         }
@@ -101,11 +101,11 @@
                         }
 
                         cardCurrency.innerHTML = `
-                            <p>EURGBP</p>
+                            <p>USDAED</p>
                         `;
 
                         cardIndex.innerHTML = `
-                            <p>${entry.rate.EURGBP}</p>
+                            <p>${entry.rate.USDAED}</p>
                         `;
 
                         cardColumn1.appendChild(cardCurrency);
@@ -127,45 +127,11 @@
                         }
 
                         cardCurrency.innerHTML = `
-                            <p>USDJPY</p>
+                            <p>USDAFN</p>
                         `;
 
                         cardIndex.innerHTML = `
-                            <p>${entry.rate.USDJPY}</p>
-                        `;
-
-                        cardColumn1.appendChild(cardCurrency);
-
-                        cardGutter2.appendChild(cardIndex);
-
-                        cardColumn2.appendChild(cardGutter2);
-
-                        cardGutter1.appendChild(cardColumn1);
-
-                        cardGutter1.appendChild(cardColumn2);
-
-                        cardBody.appendChild(cardGutter1);
-
-                        cardBorder.appendChild(cardBody);
-
-                        card.appendChild(cardBorder);
-
-                        column.appendChild(card);
-
-                        if (row) {
-                            row.appendChild(column);
-                        }
-
-                        if (index % 4 === 3 || index === forexData.length - 1) {
-                            infoDiv.appendChild(row);
-                        }
-
-                        cardCurrency.innerHTML = `
-                            <p>USDCHF</p>
-                        `;
-
-                        cardIndex.innerHTML = `
-                            <p>${entry.rate.USDCHF}</p>
+                            <p>${entry.rate.USDAFN}</p>
                         `;
 
                         cardColumn1.appendChild(cardCurrency);
@@ -195,11 +161,45 @@
                         }
 
                         cardCurrency.innerHTML = `
-                            <p>USDCAD</p>
+                            <p>USDALL</p>
                         `;
 
                         cardIndex.innerHTML = `
-                            <p>${entry.rate.USDCAD}</p>
+                            <p>${entry.rate.USDALL}</p>
+                        `;
+
+                        cardColumn1.appendChild(cardCurrency);
+
+                        cardGutter2.appendChild(cardIndex);
+
+                        cardColumn2.appendChild(cardGutter2);
+
+                        cardGutter1.appendChild(cardColumn1);
+
+                        cardGutter1.appendChild(cardColumn2);
+
+                        cardBody.appendChild(cardGutter1);
+
+                        cardBorder.appendChild(cardBody);
+
+                        card.appendChild(cardBorder);
+
+                        column.appendChild(card);
+
+                        if (row) {
+                            row.appendChild(column);
+                        }
+
+                        if (index % 4 === 3 || index === forexData.length - 1) {
+                            infoDiv.appendChild(row);
+                        }
+
+                        cardCurrency.innerHTML = `
+                            <p>USDAMD</p>
+                        `;
+
+                        cardIndex.innerHTML = `
+                            <p>${entry.rate.USDAMD}</p>
                         `;
 
                         cardColumn1.appendChild(cardCurrency);
