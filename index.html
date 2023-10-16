@@ -30,6 +30,45 @@
 
                     let row = null;
 
-                    
+                    forexData.forEach((entry, index)) => {
+                        if (index % 4 == 0) {
+                            row = document.createElement('div');
+                            row.className = 'row';
+                        }
+
+                        const card = document.createElement('div');
+                        card.className = 'card col-xl-3 col-md-6 mb-4'
+
+                        const cardBorder = document.createElement('div');
+                        cardBorder.className = 'card border-left-primary shadow h-100 py-2';
+
+                        const cardBody = document.createElement('div');
+                        cardBody.className = 'card-body';
+
+                        const cardGutter1 = document.createElement('div');
+                        cardGutter1.className = 'row no-gutters align-items-center';
+
+                        const cardColumn1 = document.createElement('div');
+                        cardColumn1.className = 'col mr-2';
+
+                        const cardCurrency = document.createElement('div');
+                        cardCurrency.className = 'text-xs font-weight-bold text-primary text-uppercase mb-1';
+
+                        const cardGutter2 = document.createElement('div');
+                        cardGutter2.className = 'row no-gutters align-items-center';
+
+                        const cardColumn2 = document.createElement('div');  
+                        cardColumn2.className = 'col-auto';
+
+                        const cardIndex = document.createElement('div');
+                        cardIndex.className = 'h5 mb-0 mr-3 font-weight-bold text-gray-800';
+
+                        cardCurrency.innerHTML = `
+                            <p>${entry.supportedPairs}</p>
+                        `;
+                    }
+
+                })    
+            }
     </script>
 </body>
