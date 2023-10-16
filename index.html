@@ -30,8 +30,8 @@
     
                     let row = null;
     
-                    forexData.forEach((rate, currency) => {
-                        if (!row || row.children.length === 4) {
+                    forexData.forEach((entry, index) => {
+                        if (index % 4 === 0) {
                             row = document.createElement('div');
                             row.className = 'row';
                         }
@@ -56,7 +56,7 @@
     
                         const cardCurrency = document.createElement('div');
                         cardCurrency.className = 'text-xs font-weight-bold text-primary text-uppercase mb-1';
-                        cardCurrency.innerHTML = `<p>${currency}</p>`;
+                        cardCurrency.innerHTML = `<p>${quotes}</p>`;
     
                         const cardGutter2 = document.createElement('div');
                         cardGutter2.className = 'row no-gutters align-items-center';
@@ -66,7 +66,7 @@
     
                         const cardIndex = document.createElement('div');
                         cardIndex.className = 'h5 mb-0 mr-3 font-weight-bold text-gray-800';
-                        cardIndex.innerHTML = `<p>${rate}</p>`;
+                        cardIndex.innerHTML = `<p>${entry.quotes}</p>`;
     
                         cardColumn1.appendChild(cardCurrency);
                         cardGutter2.appendChild(cardIndex);
@@ -77,9 +77,7 @@
                         cardBorder.appendChild(cardBody);
                         card.appendChild(cardBorder);
                         column.appendChild(card);
-    
                         row.appendChild(column);
-    
                         infoDiv.appendChild(row);
                     });
                 })
