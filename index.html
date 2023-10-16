@@ -23,7 +23,7 @@
             fetch('http://apilayer.net/api/live?access_key=977c093d5eb9db665f5ca6d170b68853&pairs=EURUSD,EURGBP,GBPUSD,USDJPY,AUDUSD,USDCHF,NZDUSD,USDCAD,USDZAR')
                 .then(response => response.json())
                 .then(data => {
-                    const forexData = data.rates;
+                    const forexData = data.quotes;
 
                     const infoDiv = document.getElementById('forex-info');
                     infoDiv.innerHTML = ''; 
